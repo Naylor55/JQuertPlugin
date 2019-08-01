@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<h2>LiuTree  使用案例</h2>
+
+
+
+<div class="a" id="ajaxUl">
+
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Plugin/jqueryLuTree/js/LuTree.js"></script>
+@*<script src="~/Plugin/jqueryLuTree/js/LiuTreeSource.js"></script>*@
+<script type="text/javascript">
+
+    //无限级请求节点下的菜单
+    $("#ajaxUl").LuAjaxTree({
+        url: '/LiuTree/GetFirstDept',
+        simIcon: "fa fa-file-o",//叶子图标
+        Demo: false,//模式，是否在服务器环境，true是演示模式，不需要后台，false是需要后台配合的使用模式
+        Method: "POST",//请求方法
+        mouIconOpen: " fa fa-folder-open",//展开图标
+        mouIconClose: "fa fa-folder",//关闭图标
+        callback: function (id) {
+            debugger
+            console.log("你选择的id是" + id);
+        }
+    });
+</script>

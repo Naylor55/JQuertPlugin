@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/juqery.form/jquery.form.js"></script>
+
+   
+</head>
+<body>
+
+
+
+    <form action="/Home/Test" method="post" id="testForm">
+        <input type="text" name="mobile" value="131123456789" />
+        <input type="submit" value="提交" />
+
+    </form>
+
+
+    <script>
+        window.onload = function () {
+            $("#testForm").ajaxForm(function (data) {
+                debugger
+                alert(data);
+            });
+        };
+
+    </script>
+</body>
+</html>
+
+
+
